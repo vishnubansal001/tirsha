@@ -1,16 +1,13 @@
-import Cards from "./components/Home/Cards";
-import Footer from "./components/Home/Footer";
-import Navbar from "./components/Home/Navbar";
-import Search from "./components/Home/Search";
+import { Routes , Route } from 'react-router-dom';
+import Home from './pages/Home';
+import SingleBlog from './pages/SingleBlog';
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Search />
-      <Cards />
-      <Footer />
-    </>
+    <Routes>
+      <Route exact path="/" element={<Home />} />
+      <Route exact path="/blog" element={<SingleBlog />} />
+    </Routes>
   );
 }
 
