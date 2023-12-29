@@ -1,4 +1,7 @@
-const Main = () => {
+import PropTypes from "prop-types";
+
+const Main = ({ id }) => {
+  console.log(id);
   return (
     <div className="max-w-screen-xl mx-auto pt-[6rem] p-10 relative">
       <div className="mb-5 max-w-2xl mx-auto">
@@ -127,6 +130,10 @@ const Main = () => {
       </div>
     </div>
   );
+};
+
+Main.propTypes = {
+  id: PropTypes.number.isRequired,
 };
 
 export default Main;

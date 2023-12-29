@@ -1,4 +1,8 @@
-const Card = () => {
+import {useNavigate} from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+const Card = ({index}) => {
+  const navigate = useNavigate();
   return (
     <div className="container flex justify-center items-center mx-4 my-4">
       <div className="lg:w-[80%] border">
@@ -15,16 +19,20 @@ const Card = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Perferendis, rem.
           </p>
-          <a
-            href="#"
+          <button
+            onClick={() => navigate(`/blog/${index}`)}
             className="bg-green-500 hover:bg-green-400 text-white px-4 py-2 inline-block mt-4 rounded"
           >
             Read more
-          </a>
+          </button>
         </div>
       </div>
     </div>
   );
+};
+
+Card.propTypes = {
+  index: PropTypes.number.isRequired,
 };
 
 export default Card;
