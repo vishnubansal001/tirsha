@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const navItems = [
   { value: "Blogs", path: "/blogs" },
@@ -7,6 +8,7 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -27,13 +29,13 @@ const Navbar = () => {
               Contact
             </p>
             <button
-            //   onClick={() => navigate("/sign-in")}
+              onClick={() => navigate("/sign-in")}
               className="bg-white px-7 py-2 rounded-full border-2 border-[#3A4F39] font-semibold text-[#3a4f39]"
             >
               Sign In
             </button>
             <button
-            //   onClick={() => navigate("/sign-up")}
+              onClick={() => navigate("/sign-up")}
               className="bg-[#28661E] px-6 py-2 rounded-full border-2 border-[#28661E] font-semibold text-white"
             >
               Sign Up
